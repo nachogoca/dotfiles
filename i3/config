@@ -239,8 +239,18 @@ bindsym $mod+Shift+x exec bash ~/.config/i3lock/lock2 -p
 # transparency for rofi
 exec compton -f
 
+# Wallpaper
 exec_always feh --bg-scale /home/nacho/Pictures/Wallpapers/berlin-3.jpg
 
+# Locker
 exec --no-startup-id xautolock -time 5 -locker 'bash /home/nacho/.config/i3lock/lock2'
+
+# Set blocmayus key as Esc
+exec --no-startup-id setxkbmap -layout us -option caps:escape
+
+# Set by default us keyboard
+exec setxkbmap us
+
+
 
 
