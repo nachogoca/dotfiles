@@ -245,11 +245,12 @@ exec_always feh --bg-scale /home/nacho/Pictures/Wallpapers/berlin-3.jpg
 # Locker
 exec --no-startup-id xautolock -time 5 -locker 'bash /home/nacho/.config/i3lock/lock2'
 
-# Set blocmayus key as Esc
+# Set by default us keyboard
+exec --no-startup-id setxkbmap us
+
+# set blocmayus key as esc 
 exec --no-startup-id setxkbmap -layout us -option caps:escape
 
-# Set by default us keyboard
-exec setxkbmap us
 
 
 
