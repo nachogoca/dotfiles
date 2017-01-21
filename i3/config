@@ -136,10 +136,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -216,14 +216,16 @@ bindsym $mod+XF86Display exec arandr
 bindsym $mod+b exec subl
 
 # vim
-bindsym $mod+m exec gvim
+bindsym $mod+m exec --no-startup-id "urxvt -e vim" 
 
 # firefox
 bindsym $mod+x exec firefox
 
 # spotify
 # bindsym $mod+p exec "konsole -e spotify-adkiller.sh"
-bindsym $mod+p exec spotify, exec "konsole -e spotify-adkiller.sh"
+for_window [class="Spotify"] move container to workspace 10
+# bindsym $mod+p exec spotify, exec "urxvt -e spotify-adkiller.sh"
+bindsym $mod+p exec spotify-wrapper.sh
 
 # keyboards
 # Us
@@ -245,13 +247,14 @@ exec_always feh --bg-scale /home/nacho/Pictures/Wallpapers/berlin-3.jpg
 # Locker
 exec --no-startup-id xautolock -time 5 -locker 'bash /home/nacho/.config/i3lock/lock2'
 
-# Set by default us keyboard
+# Battery status
+exec --no-startup-id bash ~/.config/i3status/i3-battery-popup -L 16 -t 5s -N
+
+# Keyboard
+exec_always setxkbmap us
+exec_always setxkbmap -option caps:swapescape
+
 exec --no-startup-id setxkbmap us
-
-# set blocmayus key as esc 
-exec --no-startup-id setxkbmap -layout us -option caps:escape
-
-
-
+exec --no-startup-id setxkbmap -option caps:swapescape
 
 
