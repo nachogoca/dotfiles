@@ -42,16 +42,19 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 18"
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -show run -lines 5 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 18"' 
 
+# Normal dmenu 
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop 
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus right
-bindsym $mod+l focus up
-bindsym $mod+h focus down
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus up
+bindsym $mod+k focus down
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -60,10 +63,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move right
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+h move down
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move up
+bindsym $mod+Shift+k move down
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -202,8 +205,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10  # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10    # decrease screen brightness
 
 # Display kunfu
 bindsym Ctrl+XF86Display exec xrandr --output VIRTUAL1 --off --output DP3 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --mode 1360x768 --pos 1920x0 --rotate normal
@@ -211,6 +214,12 @@ bindsym Ctrl+XF86Display exec xrandr --output VIRTUAL1 --off --output DP3 --off 
 bindsym XF86Display exec xrandr --output VIRTUAL1 --off --output DP3 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
 
 bindsym $mod+XF86Display exec arandr
+
+# Touchpad toggle
+bindsym XF86Explorer exec ~/.config/i3/toogletouchpad.sh
+
+# Screenshot
+bindsym Print exec gnome-screenshot
 
 # sublime
 bindsym $mod+b exec subl
@@ -226,6 +235,12 @@ bindsym $mod+x exec firefox
 for_window [class="Spotify"] move container to workspace 10
 # bindsym $mod+p exec spotify, exec "urxvt -e spotify-adkiller.sh"
 bindsym $mod+p exec spotify-wrapper.sh
+
+# Ranger, file explorer
+bindsym $mod+g exec "urxvt -e ranger"
+
+# Terminal on same directory
+bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
 
 # keyboards
 # Us
