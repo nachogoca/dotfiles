@@ -227,6 +227,9 @@ bindsym $mod+b exec subl
 # vim
 bindsym $mod+m exec --no-startup-id "urxvt -e vim" 
 
+# tmux
+bindsym $mod+t exec --no-startup-id "urxvt -e tmux" 
+
 # firefox
 bindsym $mod+x exec firefox
 
@@ -272,4 +275,11 @@ exec_always setxkbmap -option caps:swapescape
 exec --no-startup-id setxkbmap us
 exec --no-startup-id setxkbmap -option caps:swapescape
 
+# border / titlebar
+# new_window normal
+new_window pixel 1
+hide_edge_borders vertical
+bindsym Control+Shift+x [class="^.*"] border toggle
+for_window [class="^.*"] border pixel 1
+for_window [class="URxvt"] border pixel 1
 
