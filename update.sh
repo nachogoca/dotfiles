@@ -5,9 +5,11 @@
 # i3 lock
 # i3 status bar
 # urxvt
+# zsh
 
 cp ~/.config/i3/* ~/workspace/config/i3
 cp ~/.config/i3lock/* ~/workspace/config/i3lock
 cp ~/.config/i3status/* ~/workspace/config/i3status
 cp ~/.Xresources ~/workspace/config/
-cp ~/.profile ~/workspace/config/
+cp ~/.zshrc ~/workspace/config/
+cp ~/.vimrc ~/workspace/config/
