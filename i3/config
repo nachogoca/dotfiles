@@ -40,10 +40,9 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 18"
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -show run -lines 5 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 18"' 
-
-# Normal dmenu 
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop 
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -show run -lines 5 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 18"'
+# Normal dmenu
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -183,7 +182,7 @@ bar {
 	position top
 	colors {
 		background $bg-color
-	    	separator #757575
+        separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -225,13 +224,16 @@ bindsym Print exec gnome-screenshot
 bindsym $mod+b exec subl
 
 # vim
-bindsym $mod+m exec --no-startup-id "urxvt -e vim" 
+# bindsym $mod+m exec --no-startup-id "urxvt -e vim"
 
-# tmux
-bindsym $mod+t exec --no-startup-id "urxvt -e tmux" 
+# thunar
+bindsym $mod+t exec --no-startup-id thunar
 
-# firefox
-bindsym $mod+x exec firefox
+# zathura
+bindsym $mod+z exec --no-startup-id zathura
+
+# chrome
+bindsym $mod+n exec chromium-browser
 
 # spotify
 # bindsym $mod+p exec "konsole -e spotify-adkiller.sh"
@@ -259,7 +261,7 @@ bindsym $mod+Shift+x exec bash ~/.config/i3lock/lock2 -p
 # exec compton -f
 
 # Wallpaper
-exec_always feh --bg-scale /home/nacho/Pictures/Wallpapers/berlin-3.jpg
+exec_always feh --bg-scale /home/nacho/Pictures/Wallpapers/wallpaper.jpg
 
 # Locker
 exec --no-startup-id xautolock -time 5 -locker 'bash /home/nacho/.config/i3lock/lock2'
@@ -267,12 +269,15 @@ exec --no-startup-id xautolock -time 5 -locker 'bash /home/nacho/.config/i3lock/
 # Battery status
 exec --no-startup-id bash ~/.config/i3status/i3-battery-popup -L 16 -t 5s -N
 
+# f.lux
+exec --no-startup-id fluxgui
+
 # Keyboard
 # exec_always setxkbmap us
 exec_always setxkbmap -option caps:swapescape
 
 # exec --no-startup-id setxkbmap us
-exec --no-startup-id setxkbmap -option caps:swapescape
+#exec --no-startup-id setxkbmap -option caps:swapescape
 
 # border / titlebar
 # new_window normal
