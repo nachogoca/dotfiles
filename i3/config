@@ -223,9 +223,6 @@ bindsym Print exec gnome-screenshot
 # sublime
 bindsym $mod+b exec subl
 
-# vim
-# bindsym $mod+m exec --no-startup-id "urxvt -e vim"
-
 # thunar
 bindsym $mod+t exec --no-startup-id thunar
 
@@ -240,9 +237,6 @@ bindsym $mod+n exec chromium-browser
 for_window [class="Spotify"] move container to workspace 10
 # bindsym $mod+p exec spotify, exec "urxvt -e spotify-adkiller.sh"
 bindsym $mod+p exec spotify-wrapper.sh
-
-# Ranger, file explorer
-bindsym $mod+g exec "urxvt -e ranger"
 
 # Terminal on same directory
 bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
@@ -283,7 +277,8 @@ exec_always setxkbmap -option caps:swapescape
 # new_window normal
 new_window pixel 1
 hide_edge_borders vertical
-bindsym Control+Shift+x [class="^.*"] border toggle
+bindsym $mod+Control+Shift+x [class="^.*"] border toggle
+bindsym Control+Shift+x border toggle
 for_window [class="^.*"] border pixel 1
 for_window [class="URxvt"] border pixel 1
 
