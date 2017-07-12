@@ -7,9 +7,9 @@
 # urxvt
 # zsh
 
-cp ~/.config/i3/* ~/workspace/config/i3
-cp ~/.config/i3lock/* ~/workspace/config/i3lock
-cp ~/.config/i3status/* ~/workspace/config/i3status
-cp ~/.Xresources ~/workspace/config/
-cp ~/.zshrc ~/workspace/config/
-cp ~/.vimrc ~/workspace/config/
+cp ~/.config/i3/* ~/workspace/dotfiles/i3
+cp ~/.config/i3lock/* ~/workspace/dotfiles/i3lock
+cp ~/.config/i3status/* ~/workspace/dotfiles/i3status
+cp ~/.Xresources ~/workspace/dotfiles/
+cp ~/.zshrc ~/workspace/dotfiles/
+cp ~/.vimrc ~/workspace/dotfiles/

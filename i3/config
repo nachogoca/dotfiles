@@ -204,13 +204,16 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10  # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10    # decrease screen brightness
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 10  # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 10    # decrease screen brightness
+
+bindsym XF86MonBrightnessUp exec light -A 10  # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10    # decrease screen brightness
 
 # Display kunfu
-bindsym Ctrl+XF86Display exec xrandr --output VIRTUAL1 --off --output DP3 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --mode 1360x768 --pos 1920x0 --rotate normal
+bindsym Ctrl+XF86Display exec /bin/sh ~/.screenlayout/samsung-home.sh 
 
-bindsym XF86Display exec xrandr --output VIRTUAL1 --off --output DP3 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+bindsym XF86Display exec /bin/sh ~/.screenlayout/home.sh 
 
 bindsym $mod+XF86Display exec arandr
 

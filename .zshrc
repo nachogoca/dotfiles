@@ -55,7 +55,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode)
+plugins=(git vi-mode virtualenvwrapper web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,3 +89,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=/home/nacho/bin:/home/nacho/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/nacho/pycharm-2016.3.2/bin:/snap/bin:/home/nacho/.vimpkg/bin:/opt/apache-maven-3.3.9/bin
+
+export PATH="/home/nacho/anaconda3/bin:$PATH"
