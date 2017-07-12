@@ -13,3 +13,4 @@ cp ~/.config/i3status/* ~/workspace/dotfiles/i3status
 cp ~/.Xresources ~/workspace/dotfiles/
 cp ~/.zshrc ~/workspace/dotfiles/
 cp ~/.vimrc ~/workspace/dotfiles/
+cp ~/.screenlayout/* ~/workspace/dotfiles/screenlayout
