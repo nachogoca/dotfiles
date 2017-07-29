@@ -91,3 +91,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/home/nacho/bin:/home/nacho/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/nacho/pycharm-2016.3.2/bin:/snap/bin:/home/nacho/.vimpkg/bin:/opt/apache-maven-3.3.9/bin
 
 export PATH="/home/nacho/anaconda3/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="/home/nacho/.config/i3:/home/nacho/.config/i3lock:$PATH"
